@@ -373,17 +373,17 @@ darkModeButton.onclick = function () {
     document.body.classList.toggle("dark-mode");
     if (document.body.classList.contains("dark-mode")) {
         localStorage.setItem("quizDarkMode", "enabled");
-        darkModeButton.textContent = "☀️ Light Mode";
+        darkModeButton.textContent = "☀️";
     } else {
         localStorage.setItem("quizDarkMode", "disabled");
-        darkModeButton.textContent = "🌙 Dark Mode";
+        darkModeButton.textContent = "🌙";
     }
 };
 
 // Check if dark mode was enabled before
 if (localStorage.getItem("quizDarkMode") === "enabled") {
     document.body.classList.add("dark-mode");
-    darkModeButton.textContent = "☀️ Light Mode";
+    darkModeButton.textContent = "☀️";
 } else {
-    darkModeButton.textContent = "🌙 Dark Mode";
+    darkModeButton.textContent = "🌙";
 }
