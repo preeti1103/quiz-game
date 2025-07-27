@@ -14,6 +14,7 @@ const progressBar = document.getElementById("progress");
 const timerDisplay = document.getElementById("time-left");
 const darkModeButton = document.getElementById("dark-mode-button");
 const bestScoreDisplay = document.getElementById("best-score");
+let username = localStorage.getItem('quizUsername') || null;
 
 
 const quizQuestions = [
@@ -336,7 +337,11 @@ function showResults() {
         resultText.textContent = "Keep studying! You'll get better!";
     }
 
-    const username = prompt("Enter your name:");
+    if (!username) {
+        username = prompt("Enter your name:") || "Anonymous";
+        localStorage.setItem('quizUsername', username);
+    }
+
     fetch('/api/quiz/score', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
