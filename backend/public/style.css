@@ -288,6 +288,22 @@ body.dark-mode #result-message {
     color: #64b5f6;
 }
 
+/* Leaderboard Dark Mode */
+body.dark-mode #leaderboard {
+    background: #2d2d2d;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode #leaderboard h3 {
+    color: #64b5f6;
+}
+
+body.dark-mode #leaderboard-list li {
+    border-bottom: 1px solid #444;
+}
+
+
 #leaderboard {
     background: #f0f7ff;
     border-radius: 10px;
@@ -363,7 +379,7 @@ body.dark-mode #result-message {
     }
 
     .dark-mode-toggle {
-        padding: 5px 5px;
+        padding: 10px 10px;
         border-radius: 50px;
         top: 0px;
         right: 10px;
