@@ -27,8 +27,8 @@ A simple **Quiz Game** built with **HTML, CSS, JavaScript** for the frontend and
 ---
 
 ## **API Endpoints**
-- **POST /api/quiz/score** → Save a user score.
-- **GET /api/quiz/scores** → Fetch leaderboard (Top 10 scores).
+- **POST** `/api/quiz/score` → Save a user score.  
+- **GET** `/api/quiz/scores` → Fetch leaderboard (Top 10 scores).
 
 ---
 
@@ -46,8 +46,6 @@ MONGO_URI=your_connection_string
 
 # Start server
 npm run dev
----
 
-**License**
-This project is licensed under the MIT License.
-
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
