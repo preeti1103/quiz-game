@@ -111,7 +111,6 @@ button:hover {
 
 .answer-button:hover {
     background: #d0e0ff;
-    transform: translateX(5px);
 }
 
 .answer-button.correct {
@@ -334,7 +333,7 @@ body.dark-mode #leaderboard-list li {
 @media (max-width: 500px) {
     .container {
         height: auto;
-        margin: 40px 10px;
+        margin: 50px 10px;
         border-radius: 16px;
     }
 
@@ -360,7 +359,7 @@ body.dark-mode #leaderboard-list li {
     }
 
     #question-text {
-        font-size: 16px;
+        font-size: 14px;
         margin-bottom: 10px;
         font-weight: bold;
     }
@@ -370,6 +369,7 @@ body.dark-mode #leaderboard-list li {
         font-size: 12px;
         color: #100327;
         font-weight: bold;
+        margin: 0px;
     }
 
     .timer {
@@ -389,6 +389,62 @@ body.dark-mode #leaderboard-list li {
         border-radius: 50px;
         top: 0px;
         right: 10px;
+    }
+
+    #result-screen h1 {
+        color: #1d365f;
+        margin-bottom: 24px;
+    }
+
+    .result-info {
+        background: #f0f7ff;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 30px;
+        border: 2px solid #d0e0ff;
+    }
+
+    .result-info p {
+        font-size: 14px;
+        color: #1d365f;
+        margin-bottom: 10px;
+    }
+
+    #result-message {
+        font-size: 16px;
+        font-weight: bold;
+        color: #1d365f;
+    }
+
+    #restart-button {
+        font-size: 14px;
+        padding: 10px 15px;
+        margin-top: 0px;
+    }
+
+    #leaderboard {
+        background: #f0f7ff;
+        border-radius: 10px;
+        margin-top: 5px;
+        border: 2px solid #d0e0ff;
+        text-align: left;
+    }
+
+    #leaderboard h3 {
+        color: #1d365f;
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    #leaderboard-list {
+        list-style: none;
+        padding-left: 0;
+        font-size: 12px;
+    }
+
+    #leaderboard-list li {
+        padding: 4px 0;
+        border-bottom: 1px solid #d0e0ff;
     }
 
 }
