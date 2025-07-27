@@ -313,7 +313,7 @@ function showResults() {
 
     // Show score
     document.getElementById("result-score-line").textContent =
-        `You scored ${score} out of ${shuffledQuestions.length}`;
+        `${score} out of ${shuffledQuestions.length}`;
 
     // Check and update best score
     let bestScore = localStorage.getItem('bestScore') || 0;
