@@ -332,6 +332,12 @@ body.dark-mode #leaderboard-list li {
 
 /* Mobile styles */
 @media (max-width: 500px) {
+    .container {
+        height: auto;
+        margin: 40px 10px;
+        border-radius: 16px;
+    }
+
     .screen {
         padding: 24px;
     }
