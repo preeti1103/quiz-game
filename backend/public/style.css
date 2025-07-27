@@ -455,23 +455,9 @@ body.dark-mode #leaderboard-list li {
         font-size: 12px;
     }
 
-    /* Remove mobile tap highlight */
+    /* Remove tap highlight on mobile (iOS Safari) */
     .answer-button {
         -webkit-tap-highlight-color: transparent;
-        outline: none;
     }
-
-    /* Remove focus highlight after click (mobile specific) */
-    .answer-button:focus {
-        outline: none;
-        background: #f0f7ff;
-        /* Reset back to default */
-    }
-
-    /* Optional: active effect on click (short flash) */
-    .answer-button:active {
-        background: #d0e0ff;
-    }
-
 
 }
