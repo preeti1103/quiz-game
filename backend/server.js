@@ -16,7 +16,7 @@ app.use('/api/quiz', require('./routes/quizRoutes'));
 
 // Serve frontend
 app.use(express.static(path.join(__dirname, 'public')));
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
