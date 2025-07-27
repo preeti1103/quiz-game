@@ -337,7 +337,7 @@ function showResults() {
     }
 
     const username = prompt("Enter your name:");
-    fetch(`${window.location.origin}/api/quiz/score`, {
+    fetch('/api/quiz/score', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, score })
@@ -347,7 +347,7 @@ function showResults() {
         .catch(err => console.error(err));
 
     // Fetch and display leaderboard
-    fetch(`${window.location.origin}/api/quiz/scores`)
+    fetch('/api/quiz/scores')
         .then(res => res.json())
         .then(scores => {
             const leaderboardList = document.getElementById('leaderboard-list');
