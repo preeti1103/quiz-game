@@ -15,9 +15,9 @@ app.use(express.json()); // <---- Important for JSON POST
 app.use('/api/quiz', require('./routes/quizRoutes'));
 
 // Serve frontend
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 const PORT = process.env.PORT || 5000;

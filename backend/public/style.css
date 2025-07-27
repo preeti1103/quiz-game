@@ -1,0 +1,372 @@
+/* Simple reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #91b2ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main container */
+.container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Button styles */
+button {
+    background: #1d365f;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px 0;
+}
+
+button:hover {
+    background: #0c192e;
+    transform: translateY(-2px);
+}
+
+/* Screen styles */
+.screen {
+    display: none;
+    padding: 32px;
+    text-align: center;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* Start screen */
+#start-screen h1 {
+    color: #1d365f;
+    margin-bottom: 20px;
+    font-size: 40px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#start-screen p {
+    color: #444444;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+/* Quiz screen */
+.quiz-header {
+    margin-bottom: 24px;
+}
+
+#question-text {
+    color: #1d365f;
+    margin-bottom: 24px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.quiz-info {
+    display: flex;
+    justify-content: space-between;
+    color: #5a5a5a;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Answer buttons */
+.answers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.answer-button {
+    background: #f0f7ff;
+    color: #1d365f;
+    border: 2px solid #d0e0ff;
+    border-radius: 10px;
+    padding: 16px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    font-size: 16px;
+}
+
+.answer-button:hover {
+    background: #d0e0ff;
+    transform: translateX(5px);
+}
+
+.answer-button.correct {
+    background: #e6f7ed;
+    border-color: #a3e0b5;
+    color: #28a745;
+}
+
+.answer-button.incorrect {
+    background: #ffebeb;
+    border-color: #ffb3b3;
+    color: #dc3545;
+}
+
+/* Progress bar */
+.progress-bar {
+    height: 8px;
+    background: #f0f7ff;
+    border-radius: 4px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #1d365f, #3a6bff);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* Result screen */
+#result-screen h1 {
+    color: #1d365f;
+    margin-bottom: 30px;
+}
+
+.result-info {
+    background: #f0f7ff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 2px solid #d0e0ff;
+}
+
+.result-info p {
+    font-size: 20px;
+    color: #1d365f;
+    margin-bottom: 16px;
+}
+
+#result-message {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1d365f;
+    margin-top: 15px;
+}
+
+/* Timer */
+.timer {
+    font-size: 15px;
+    color: #ff6b6b;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    background: #1d365f;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.05);
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .container {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode #start-screen h1,
+body.dark-mode #result-screen h1 {
+    color: #64b5f6;
+}
+
+body.dark-mode #start-screen p,
+body.dark-mode .quiz-info,
+body.dark-mode .result-info p {
+    color: #b0b0b0;
+}
+
+/*question text styling for dark mode*/
+body.dark-mode #question-text {
+    color: #fcfdff;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    background: rgba(30, 30, 30, 0.7);
+    border-radius: 8px;
+    margin: 15px 0;
+    line-height: 1.5;
+}
+
+body.dark-mode .answer-button {
+    background: #2d2d2d;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .answer-button:hover {
+    background: #3d3d3d;
+}
+
+body.dark-mode .answer-button.correct {
+    background: #74b877;
+    color: white;
+}
+
+body.dark-mode .answer-button.incorrect {
+    background: #b55d5d;
+    color: white;
+}
+
+body.dark-mode .progress-bar {
+    background: #2d2d2d;
+}
+
+body.dark-mode .progress {
+    background: linear-gradient(90deg, #64b5f6, #1976d2);
+}
+
+body.dark-mode .result-info {
+    background: #2d2d2d;
+    border-color: #444;
+}
+
+body.dark-mode button {
+    background: #1976d2;
+    color: white;
+}
+
+body.dark-mode button:hover {
+    background: #1565c0;
+}
+
+body.dark-mode .dark-mode-toggle {
+    background: #1976d2;
+    color: white;
+}
+
+body.dark-mode .timer {
+    color: #ff7043;
+}
+
+body.dark-mode #result-message {
+    color: #64b5f6;
+}
+
+#leaderboard {
+    background: #f0f7ff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    border: 2px solid #d0e0ff;
+    text-align: left;
+}
+
+#leaderboard h3 {
+    color: #1d365f;
+    margin-bottom: 10px;
+}
+
+#leaderboard-list {
+    list-style: none;
+    padding-left: 0;
+    font-size: 18px;
+}
+
+#leaderboard-list li {
+    padding: 4px 0;
+    border-bottom: 1px solid #d0e0ff;
+}
+
+
+/* Mobile styles */
+@media (max-width: 500px) {
+    .screen {
+        padding: 24px;
+    }
+
+    #start-screen h1 {
+        font-size: 28px;
+    }
+
+    #start-screen p {
+        font-size: 15px;
+    }
+
+    #quiz-screen {
+        height: 20%;
+        min-height: 20%;
+    }
+
+    .quiz-info {
+        font-size: 10px;
+    }
+
+    #question-text {
+        font-size: 16px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .answer-button {
+        padding: 8px;
+        font-size: 12px;
+        color: #100327;
+        font-weight: bold;
+    }
+
+    .timer {
+        font-size: 10px;
+        color: #ff6b6b;
+        font-weight: bold;
+        margin-top: 0px;
+    }
+
+    #start-button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .dark-mode-toggle {
+        padding: 5px 5px;
+        border-radius: 50px;
+        top: 0px;
+        right: 10px;
+    }
+
+}
